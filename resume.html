@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sahil Kwatra - Product Manager | Resume & Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            color-scheme: dark;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #0a0e27;
+            color: #f5f7fb;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: linear-gradient(135deg, #0a0e27 0%, #1a1f3a 50%, #0f1429 100%);
+            min-height: 100vh;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 20% 50%, rgba(125, 207, 255, 0.05) 0%, transparent 50%),
+                        radial-gradient(circle at 80% 80%, rgba(125, 207, 255, 0.03) 0%, transparent 50%);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .container {
+            position: relative;
+            z-index: 1;
+            max-width: 950px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .resume-wrapper {
+            background: rgba(10, 14, 39, 0.7);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(125, 207, 255, 0.15);
+            border-radius: 16px;
+            padding: 3.5rem;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
+            transition: all 300ms ease;
+            animation: slideUp 0.6s ease-out;
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 2.5rem;
+            padding-bottom: 2.5rem;
+            border-bottom: 2px solid rgba(125, 207, 255, 0.2);
+            position: relative;
+        }
+
+        .header::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #7dcfff, transparent);
+        }
+
+        .name {
+            font-size: 2.5rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #7dcfff 0%, #5ab0e0 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin: 0 0 0.5rem;
+            letter-spacing: -0.5px;
+        }
+
+        .certs {
+            color: #7dcfff;
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            letter-spacing: 0.05em;
+        }
+
+        .location {
+            color: #cfd8e3;
+            font-size: 1rem;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+
+        .location i {
+            color: #7dcfff;
+        }
+
+        .contact {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            font-size: 0.95rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: all 200ms ease;
+        }
+
+        .contact-item i {
+            color: #7dcfff;
+            font-size: 1.1rem;
+        }
+
+        .contact a {
+            color: #cfd8e3;
+            text-decoration: none;
+            transition: color 200ms ease;
+            border-bottom: 1px solid transparent;
+        }
+
+        .contact a:hover {
+            color: #7dcfff;
+            border-bottom-color: #7dcfff;
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #7dcfff;
+            margin-top: 2.5rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 2px solid rgba(125, 207, 255, 0.2);
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            position: relative;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        h2 i {
+            font-size: 1.3rem;
+        }
+
+        h2:first-of-type {
+            margin-top: 0;
+        }
+
+        .section {
+            margin-bottom: 2rem;
+        }
+
+        .job {
+            margin-bottom: 2rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid rgba(125, 207, 255, 0.1);
+            transition: all 200ms ease;
+        }
+
+        .job:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .job:hover {
+            padding-left: 1rem;
+            background: rgba(125, 207, 255, 0.02);
+            border-radius: 8px;
+        }
+
+        .job-title {
+            font-weight: 700;
+            color: #f5f7fb;
+            font-size: 1.15rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .job-company {
+            color: #7dcfff;
+            font-weight: 600;
+            font-size: 0.95rem;
+            margin-bottom: 0.25rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .job-company i {
+            font-size: 0.8rem;
+        }
+
+        .job-dates {
+            color: #a0aec0;
+            font-size: 0.85rem;
+            margin-bottom: 0.75rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .job-dates i {
+            font-size: 0.8rem;
+        }
+
+        .job-description {
+            color: #cfd8e3;
+            line-height: 1.7;
+            font-size: 0.95rem;
+        }
+
+        .job-description ul {
+            margin: 0.75rem 0;
+            padding-left: 1.75rem;
+            list-style: none;
+        }
+
+        .job-description li {
+            margin-bottom: 0.6rem;
+            position: relative;
+            padding-left: 0.75rem;
+        }
+
+        .job-description li::before {
+            content: '▸';
+            position: absolute;
+            left: -0.75rem;
+            color: #7dcfff;
+            font-weight: bold;
+        }
+
+        .education-item {
+            margin-bottom: 1.5rem;
+            padding: 1rem;
+            background: rgba(125, 207, 255, 0.05);
+            border-left: 3px solid #7dcfff;
+            border-radius: 6px;
+            transition: all 200ms ease;
+        }
+
+        .education-item:hover {
+            background: rgba(125, 207, 255, 0.1);
+            transform: translateX(5px);
+        }
+
+        .degree {
+            font-weight: 700;
+            color: #f5f7fb;
+            font-size: 1rem;
+        }
+
+        .school {
+            color: #7dcfff;
+            font-size: 0.9rem;
+            margin-top: 0.25rem;
+        }
+
+        .details {
+            color: #a0aec0;
+            font-size: 0.85rem;
+            margin-top: 0.25rem;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .skill-category {
+            padding: 1.5rem;
+            background: linear-gradient(135deg, rgba(125, 207, 255, 0.08) 0%, rgba(125, 207, 255, 0.04) 100%);
+            border: 1px solid rgba(125, 207, 255, 0.15);
+            border-left: 4px solid #7dcfff;
+            border-radius: 10px;
+            transition: all 300ms ease;
+            cursor: pointer;
+        }
+
+        .skill-category:hover {
+            background: linear-gradient(135deg, rgba(125, 207, 255, 0.12) 0%, rgba(125, 207, 255, 0.08) 100%);
+            border-color: rgba(125, 207, 255, 0.3);
+            transform: translateY(-4px);
+            box-shadow: 0 12px 24px rgba(125, 207, 255, 0.1);
+        }
+
+        .skill-category-title {
+            font-weight: 700;
+            color: #7dcfff;
+            margin-bottom: 0.75rem;
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .skill-category ul {
+            list-style: none;
+            font-size: 0.9rem;
+            color: #cfd8e3;
+            line-height: 1.8;
+        }
+
+        .skill-category li {
+            position: relative;
+            padding-left: 1rem;
+        }
+
+        .skill-category li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #7dcfff;
+            font-weight: bold;
+        }
+
+        .summary-text {
+            font-size: 1rem;
+            line-height: 1.8;
+            color: #cfd8e3;
+            background: rgba(125, 207, 255, 0.05);
+            padding: 1.5rem;
+            border-left: 3px solid #7dcfff;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+        }
+
+        .action-buttons {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 2.5rem;
+            padding-top: 2.5rem;
+            border-top: 1px solid rgba(125, 207, 255, 0.2);
+        }
+
+        .btn {
+            padding: 0.9rem 1.8rem;
+            border-radius: 8px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 250ms ease;
+            cursor: pointer;
+            border: none;
+            font-size: 0.95rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #7dcfff 0%, #5ab0e0 100%);
+            color: #04121f;
+            box-shadow: 0 10px 20px rgba(125, 207, 255, 0.2);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 30px rgba(125, 207, 255, 0.3);
+        }
+
+        .btn-secondary {
+            background: rgba(125, 207, 255, 0.1);
+            color: #7dcfff;
+            border: 1px solid #7dcfff;
+        }
+
+        .btn-secondary:hover {
+            background: rgba(125, 207, 255, 0.2);
+            transform: translateY(-3px);
+        }
+
+        @media (max-width: 768px) {
+            .resume-wrapper {
+                padding: 2rem;
+                border-radius: 12px;
+            }
+
+            .container {
+                padding: 1rem;
+            }
+
+            .name {
+                font-size: 1.8rem;
+            }
+
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .contact {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            h2 {
+                font-size: 1.25rem;
+            }
+
+            .action-buttons {
+                flex-direction: column;
+            }
+
+            .btn {
+                justify-content: center;
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="resume-wrapper">
+            <div class="header">
+                <div class="name">Sahil Kwatra</div>
+                <div class="certs">CFA, FRM</div>
+                <div class="location">
+                    <i class="fas fa-map-marker-alt"></i>
+                    Seattle, Washington
+                </div>
+                <div class="contact">
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <span>(480) 410-0474</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <a href="mailto:sahilkwats@gmail.com">sahilkwats@gmail.com</a>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fab fa-linkedin"></i>
+                        <a href="https://www.linkedin.com/in/sahil-kwatra" target="_blank">LinkedIn</a>
+                    </div>
+                </div>
+            </div>
+
+            <h2><i class="fas fa-briefcase"></i> Professional Summary</h2>
+            <div class="section">
+                <div class="summary-text">
+                    Experienced Product Manager with 12+ years of Product experience committed to building and shipping innovative products by leveraging skills in GPU Marketplace, Network Topology & Cloud LLM Products. Proven track record of driving revenue growth, building cross-functional partnerships, and delivering scalable infrastructure solutions.
+                </div>
+            </div>
+
+            <h2><i class="fas fa-graduation-cap"></i> Education</h2>
+            <div class="section">
+                <div class="education-item">
+                    <div class="degree">Master of Science (MS), Information Systems</div>
+                    <div class="school">W. P. Carey School of Business, Arizona State University</div>
+                    <div class="details">Tempe, AZ | GPA: 3.8/4 | 2016-2018</div>
+                </div>
+                <div class="education-item">
+                    <div class="degree">Master of Business Administration (MBA)</div>
+                    <div class="school">W. P. Carey School of Business, Arizona State University</div>
+                    <div class="details">GPA: 3.73/4</div>
+                </div>
+                <div class="education-item">
+                    <div class="degree">Bachelor of Engineering, BS Engineering</div>
+                    <div class="school">Thapar University</div>
+                    <div class="details">Patiala, India | GPA: 8.26/10 | 2006-2010</div>
+                </div>
+            </div>
+
+            <h2><i class="fas fa-star"></i> Professional Qualifications & Skills</h2>
+            <div class="section">
+                <div class="skills-grid">
+                    <div class="skill-category">
+                        <div class="skill-category-title"><i class="fas fa-cloud"></i> Cloud & ML Certifications</div>
+                        <ul>
+                            <li>AWS ML Associate, MLOps, LLMOps</li>
+                            <li>AWS Certified Solution Architect</li>
+                            <li>AWS Sagemaker, Azure ML, Vertex AI</li>
+                        </ul>
+                    </div>
+                    <div class="skill-category">
+                        <div class="skill-category-title"><i class="fas fa-brain"></i> ML Expertise</div>
+                        <ul>
+                            <li>LLM Fine-Tuning, RAG, Transfer Learning</li>
+                            <li>PyTorch, TensorFlow, Scikit-learn</li>
+                            <li>ML Model Serving & Testing</li>
+                        </ul>
+                    </div>
+                    <div class="skill-category">
+                        <div class="skill-category-title"><i class="fas fa-server"></i> Infrastructure</div>
+                        <ul>
+                            <li>EC2 GPU Marketplace</li>
+                            <li>ML Pipelines & Orchestration</li>
+                            <li>Python, Experiment Tracking</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <h2><i class="fas fa-history"></i> Professional Experience</h2>
+
+            <div class="section">
+                <div class="job">
+                    <div class="job-company"><i class="fas fa-building"></i> Yahoo Mail | Seattle, WA</div>
+                    <div class="job-title">Sr Principal Product Management - AI ML Platform</div>
+                    <div class="job-dates"><i class="fas fa-calendar"></i> Feb 2026 - Present</div>
+                    <div class="job-description">
+                        <ul>
+                            <li>Drove outbound technical engagement for 15+ enterprise AI/ML accounts, serving as primary product and infrastructure voice across pre- and post-sales — translating GPU cluster requirements, training workload architectures, and LLM deployment constraints into actionable roadmap input that accelerated feature adoption by 35%.</li>
+                            <li>Led cross-functional account strategy for SI and hyperscaler partners deploying large-scale AI infrastructure, owning QBRs, SLA performance reviews, and multi-stakeholder roadmap sessions that drove $XM in expansion revenue and reduced churn risk across 90% of managed accounts.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="job">
+                    <div class="job-company"><i class="fas fa-building"></i> Calix.com | Seattle, WA</div>
+                    <div class="job-title">Director Product Management - AI ML Platform</div>
+                    <div class="job-dates"><i class="fas fa-calendar"></i> Feb 2024 - Dec 2025</div>
+                    <div class="job-description">
+                        <ul>
+                            <li>Led petabyte-scale data ingestion strategy for GPU telemetry platform, architecting real-time pipelines processing 50TB+ daily across 15 regions with 99.9% availability and &lt;100ms latency for ML workload optimization.</li>
+                            <li>Owned end-to-end product strategy for GPU resource monitoring and analytics platform, defining technical requirements, SLAs, and architectural decisions that reduced customer infrastructure costs by 30% while improving AI/ML training performance.</li>
+                            <li>Drove cross-functional execution with engineering, sales, and customer success teams to deliver GPU optimization primitives, enabling "configure once, deploy everywhere" workflows that accelerated customer onboarding by 60%.</li>
+                            <li>Built strategic partnerships with AI/ML platform vendors and system integrators, enabling seamless data exchange and workflow automation across diverse customer technology stacks.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="job">
+                    <div class="job-company"><i class="fas fa-building"></i> Amazon.com | Seattle, WA</div>
+                    <div class="job-title">Senior Technical Product Manager - EC2 GPU Infrastructure</div>
+                    <div class="job-dates"><i class="fas fa-calendar"></i> Oct 2018 - Feb 2024</div>
+                    <div class="job-description">
+                        <ul>
+                            <li>Built reusable platform primitives for GPU workload scheduling and resource allocation, creating standardized APIs and webhooks that enabled seamless integration across 200+ customer environments and internal AWS services.</li>
+                            <li>Established data normalization standards for GPU performance metrics and telemetry, collaborating with NVIDIA, cloud providers, and industry working groups to drive adoption of unified monitoring schemas.</li>
+                            <li>Delivered marketplace-ready integrations connecting GPU compute with downstream analytics, ML training platforms, and monitoring tools, resulting in 40% increase in customer platform adoption and $50M+ ARR growth.</li>
+                            <li>Leveraged advanced analytics and telemetry to identify GPU utilization patterns and optimization opportunities, using data-driven insights to inform product roadmap and achieve 25% improvement in resource efficiency.</li>
+                            <li>Conducted comprehensive requirements gathering with enterprise customers, creating detailed PRFAQs and strategy documents for GPU optimization features that addressed security, compliance, and scalability needs.</li>
+                            <li>Drove user acceptance testing (UAT) for complex distributed systems handling real-time GPU workload data, ensuring technical validation and customer-facing requirements were met before production deployment.</li>
+                            <li>Tracked emerging trends in AI/ML infrastructure, GPU computing, and cloud-native architectures to maintain AWS's competitive advantage in high-performance computing markets.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="job">
+                    <div class="job-company"><i class="fas fa-building"></i> NTPC Ltd. | Guwahati, India</div>
+                    <div class="job-title">Sr. Manager - Engineering & Product</div>
+                    <div class="job-dates"><i class="fas fa-calendar"></i> 2011 - 2016</div>
+                    <div class="job-description">
+                        <ul>
+                            <li>Owned the full SaaS Product Lifecycle translating engineering and technical requirements into business solutions, launching the product, defining North star metrics, and positively impacting the top line by ~5%.</li>
+                            <li>Developed product pricing, GTM strategies and drove decision-making through user insights, quantitative analysis and A/B testing.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="action-buttons">
+                <a href="https://www.linkedin.com/in/sahil-kwatra" target="_blank" class="btn btn-primary">
+                    <i class="fab fa-linkedin"></i> LinkedIn Profile
+                </a>
+                <a href="mailto:sahilkwats@gmail.com" class="btn btn-secondary">
+                    <i class="fas fa-envelope"></i> Get In Touch
+                </a>
+                <a href="https://theleanproductmanager.com/" target="_blank" class="btn btn-secondary">
+                    <i class="fas fa-globe"></i> Portfolio
+                </a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
